@@ -220,7 +220,7 @@ h3 {
   display: grid;
   grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
   gap: clamp(22px, 4vw, 54px);
-  align-items: center;
+  align-items: stretch;
   padding: clamp(76px, 11vw, 140px) clamp(22px, 7vw, 92px);
   background: var(--paper-soft);
 }

@@ -58,16 +58,18 @@
           <p class="eyebrow">Travel is about to change</p>
           <h2>Door to door. Overnight. Effortless.</h2>
         </div>
-        <p>
-          Imagine finishing dinner in Canberra. A driverless car arrives. You step
-          inside, fall asleep, and wake in Melbourne. No airport, no security
-          lines, no parking, no luggage queues. Just arrival.
-        </p>
-        <p>
-          Autonomous vehicles are already operating in cities across the world.
-          Overnight, sleep-based travel isn't a question of if. It's a question
-          of when.
-        </p>
+        <div>
+          <p>
+            Imagine finishing dinner in Canberra. A driverless car arrives. You step
+            inside, fall asleep, and wake in Melbourne. No airport, no security
+            lines, no parking, no luggage queues. Just arrival.
+          </p>
+          <p>
+            Autonomous vehicles are already operating in cities across the world.
+            Overnight, sleep-based travel isn't a question of if. It's a question
+            of when.
+          </p>
+        </div>
       </section>
 
       <section class="video-band" aria-label="Refresh video">
@@ -206,16 +208,17 @@
             touch.
           </p>
         </div>
-        <p class="form-intro">Partnership, press, or just curious — we'd like to hear from you.</p>
+        <div class="contact-form-col">
+          <p class="form-intro">Partnership, press, or just curious — we'd like to hear from you.</p>
 
-        <div id="fs-success" style="display:none; color:#C9A84C; text-align:center; padding:1.5rem 0; font-size:1rem;">
-          Thank you. We will be in touch.
-        </div>
-        <div id="fs-error" style="display:none; color:#c0392b; text-align:center; padding:0.5rem 0; font-size:0.9rem;">
-          Something went wrong. Please try again.
-        </div>
+          <div id="fs-success" style="display:none; color:#C9A84C; text-align:center; padding:1.5rem 0; font-size:1rem;">
+            Thank you. We will be in touch.
+          </div>
+          <div id="fs-error" style="display:none; color:#c0392b; text-align:center; padding:0.5rem 0; font-size:0.9rem;">
+            Something went wrong. Please try again.
+          </div>
 
-        <form id="contact-form" class="contact-form">
+          <form id="contact-form" class="contact-form">
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
           <input type="text" id="name" name="name" placeholder="Name" required>
@@ -241,6 +244,7 @@
               });
               if (res.ok) {
                 document.getElementById('contact-form').style.display = 'none';
+                document.getElementById('fs-error').style.display = 'none';
                 document.getElementById('fs-success').style.display = 'block';
               } else {
                 document.getElementById('fs-error').style.display = 'block';
@@ -254,6 +258,7 @@
             }
           });
         </script>
+        </div><!-- /.contact-form-col -->
       </section>
     </main>
 

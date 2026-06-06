@@ -115,7 +115,7 @@
 
       <section class="transition-band" aria-label="The missing moment">
         <div class="transition-inner">
-          <h2>The most important part of future travel isn't the journey.</h2>
+          <p class="eyebrow">The most important part of future travel isn't the journey.</p>
           <p>
             It's the transition between arriving… and feeling ready. That missing
             moment changes how we think about movement, hospitality, and cities
@@ -208,62 +208,52 @@
         </div>
         <p class="form-intro">Partnership, press, or just curious — we'd like to hear from you.</p>
 
-        <!-- Success and error banners -->
-        <div data-fs-success style="display:none; color: #C9A84C; text-align: center; padding: 1rem 0;">
+        <div id="fs-success" style="display:none; color:#C9A84C; text-align:center; padding:1.5rem 0; font-size:1rem;">
           Thank you. We will be in touch.
         </div>
-        <div data-fs-error style="display:none; color: #c0392b; text-align: center; padding: 0.5rem 0;">
+        <div id="fs-error" style="display:none; color:#c0392b; text-align:center; padding:0.5rem 0; font-size:0.9rem;">
           Something went wrong. Please try again.
         </div>
 
         <form id="contact-form" class="contact-form">
-
-          <!-- Honeypot spam trap -->
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Name"
-            required
-            data-fs-field
-          >
-          <span data-fs-error="name" style="color: #c0392b; font-size: 0.85rem;"></span>
+          <input type="text" id="name" name="name" placeholder="Name" required>
+          <input type="email" id="email" name="email" placeholder="Email" required>
+          <textarea id="message" name="message" placeholder="Message"></textarea>
 
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            required
-            data-fs-field
-          >
-          <span data-fs-error="email" style="color: #c0392b; font-size: 0.85rem;"></span>
-
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Message"
-            data-fs-field
-          ></textarea>
-          <span data-fs-error="message" style="color: #c0392b; font-size: 0.85rem;"></span>
-
-          <button type="submit" data-fs-submit-btn>Send message</button>
-
+          <button type="submit" id="submit-btn">Send message</button>
         </form>
 
-        <!-- Formspree Ajax SDK -->
         <script>
-          window.formspree = window.formspree || function () {
-            (formspree.q = formspree.q || []).push(arguments);
-          };
-          formspree('initForm', {
-            formElement: '#contact-form',
-            formId: 'mqeoegjg'
+          document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            btn.disabled = true;
+            btn.textContent = 'Sending…';
+
+            const data = new FormData(this);
+            try {
+              const res = await fetch('https://formspree.io/f/mqeoegjg', {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+              });
+              if (res.ok) {
+                document.getElementById('contact-form').style.display = 'none';
+                document.getElementById('fs-success').style.display = 'block';
+              } else {
+                document.getElementById('fs-error').style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Send message';
+              }
+            } catch {
+              document.getElementById('fs-error').style.display = 'block';
+              btn.disabled = false;
+              btn.textContent = 'Send message';
+            }
           });
         </script>
-        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
       </section>
     </main>
 

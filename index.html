@@ -20,19 +20,6 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="site-header" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Refresh home">
-        <img
-          src="https://www.refresh.app/ws/media-library/23e2750e1380dfa0cc80183ffc7fbca5/r---gold.png"
-          alt="Refresh"
-        />
-      </a>
-      <nav>
-        <a href="#future">Future</a>
-        <a href="#hotels">Hotels</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
 
     <main id="top">
       <section class="hero" aria-label="Refresh introduction">
@@ -49,7 +36,9 @@
             what happens next? Refresh is built for the moment between arrival
             and being ready.
           </p>
-          <a class="button" href="#contact">Contact Refresh</a>
+          <a href="#contact" class="button">Stay close</a>
+          <p class="hero-microcopy">No cookies. No tracking.</p>
+          <p class="hero-microcopy">One email when the world changes.</p>
         </div>
       </section>
 
@@ -60,9 +49,9 @@
         </div>
         <div>
           <p>
-            Imagine finishing dinner in Canberra. A driverless car arrives. You step
-            inside, fall asleep, and wake in Melbourne. No airport, no security
-            lines, no parking, no luggage queues. Just arrival.
+            Imagine finishing dinner in Canberra. A driverless car arrives,
+            you fall asleep, and wake up in Melbourne. No airport. No queues.
+            Just arrival.
           </p>
           <p>
             Autonomous vehicles are already operating in cities across the world.
@@ -157,18 +146,6 @@
         </div>
       </section>
 
-      <section class="founder-band" aria-label="Built from hotel experience">
-        <div>
-          <p class="eyebrow">Built from a lifetime in hotels</p>
-          <h2>If travel changes, hotels change too.</h2>
-        </div>
-        <p>
-          Refresh was created by former hotel managers, educators, podcast hosts,
-          and founders. Through <a href="https://www.refresh.app/hoteleaders/">Hotel Leaders</a> and <a href="https://comp.anu.edu.au/TechLauncher/">ANU TechLauncher</a> engineering
-          teams, the concept has been explored as both a hotel idea and a future
-          travel idea.
-        </p>
-      </section>
 
       <section class="logo-story" aria-label="Refresh logo story">
         <img
@@ -204,12 +181,11 @@
           <p class="eyebrow">Stay close</p>
           <h2>The future of travel is about arriving refreshed.</h2>
           <p>
-            If the Refresh idea resonates with you, send a note and we will be in
-            touch.
+            If the Refresh idea stayed with you, leave your email.
           </p>
         </div>
         <div class="contact-form-col">
-          <p class="form-intro">Partnership, press, or just curious — we'd like to hear from you.</p>
+          <p class="form-intro">If the Refresh idea stayed with you, leave your email.</p>
 
           <div id="fs-success" style="display:none; color:#C9A84C; text-align:center; padding:1.5rem 0; font-size:1rem;">
             Thank you. We will be in touch.
@@ -221,9 +197,9 @@
           <form id="contact-form" class="contact-form">
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
-          <input type="text" id="name" name="name" placeholder="Name" required>
           <input type="email" id="email" name="email" placeholder="Email" required>
-          <textarea id="message" name="message" placeholder="Message"></textarea>
+          <input type="text" id="name" name="name" placeholder="Name">
+          <textarea id="message" name="message" placeholder="Optional note (not monitored)"></textarea>
 
           <button type="submit" id="submit-btn">Send message</button>
         </form>

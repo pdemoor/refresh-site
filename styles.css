@@ -514,6 +514,16 @@ h3 {
   text-underline-offset: 2px;
 }
 
+/* Hero microcopy beneath CTA */
+.hero-microcopy {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: #888;
+  text-align: center;
+  margin: 0.25rem 0 0;
+  text-transform: none;
+}
+
 /* 2.9 — Contact form framing line */
 .form-intro {
   color: var(--muted);

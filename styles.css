@@ -479,3 +479,45 @@ h3 {
     aspect-ratio: 4 / 3;
   }
 }
+
+/* ── Additions: June 2026 ───────────────────────────────────── */
+
+/* 2.4 — "The missing moment" transition section */
+.transition-band {
+  background: var(--paper);
+  padding: clamp(64px, 9vw, 112px) clamp(22px, 7vw, 92px);
+}
+
+.transition-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.transition-inner p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.5vw, 1.22rem);
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+
+/* 2.7 — Image attribution caption */
+.image-caption {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.image-caption a {
+  color: var(--gold-deep);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* 2.9 — Contact form framing line */
+.form-intro {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
